@@ -2,6 +2,8 @@
 
 **Water • Soil • Life**
 
+Demo : [https://gleeful-dasik-b9335c.netlify.app/](https://gleeful-dasik-b9335c.netlify.app/)
+
 A nature-themed educational web application combining three groundwater-awareness experiences:
 
 -  **AquaQuest** — interactive conservation game inspired by the educational-game direction of SIH1698.
