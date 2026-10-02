@@ -48,23 +48,14 @@ Outputs:
 
 No installation required. Open `index.html` in a modern browser.
 
-Optional local server:
-
-```bash
-python -m http.server 8000
-```
-
-Then visit `http://localhost:8000`.
 
 ## Files
 
 ```text
 AquaSphere_Lite/
-├── index.html
-├── style.css
-├── app.js
+├── index.html(includes css and js and other )
 ├── README.md
-└── SUBMISSION_CHECKLIST.md
+
 ```
 
 ## Technology
