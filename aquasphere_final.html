@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AquaSphere | The Hidden Water</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#111b15;--panel:#19271e;--panel2:#223328;--green:#4f744f;--green2:#78945e;
+ --cream:#f1e7d2;--muted:#b7b9a9;--line:#354438;--amber:#d19a55;--rust:#b76548;--gold:#e0bd78;
+ --shadow:0 24px 70px rgba(0,0,0,.30);--radius:24px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 0%,#263c2c 0,#111b15 38%,#0c130f 100%);color:var(--cream);font-family:"DM Sans",Arial,sans-serif;line-height:1.6}button,input{font:inherit}button{cursor:pointer}.page{display:none}.page.active{display:block}.container{width:min(1180px,92%);margin:auto}.section{padding:78px 0}.eyebrow{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:14px}.section-title{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.3rem,5vw,4.5rem);line-height:1.02;margin:0;color:#fff7e7}.section-subtitle{max-width:760px;color:var(--muted);font-size:1.03rem;line-height:1.8;margin:16px 0 0}
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 4%;background:rgba(12,19,15,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-family:"Playfair Display",serif;font-weight:700;font-size:1.2rem;cursor:pointer}.brand-mark{width:36px;height:36px;border-radius:50% 50% 48% 48%;background:linear-gradient(145deg,#9a6a43,#426247);position:relative}.brand-mark:after{content:"";position:absolute;width:9px;height:19px;background:#d6b875;border-radius:100% 0 100% 0;right:8px;top:7px;transform:rotate(38deg)}.navlinks{display:flex;gap:5px;overflow:auto}.navlinks button{white-space:nowrap;border:0;background:transparent;color:#b7c0b2;padding:10px 13px;border-radius:11px;font-weight:700}.navlinks button:hover,.navlinks button.active{background:#34523b;color:#fff}.top-reset{
+border:1px solid #b76548;
+background:#b76548;
+color:#fffaf0;
+border-radius:11px;
+padding:10px 16px;
+font-weight:800;
+box-shadow:0 6px 18px rgba(183,101,72,.22);
+transition:.2s;
+white-space:nowrap;
+}
+ .top-reset{
+border:1px solid #b76548;
+background:#b76548;
+color:#fffaf0;
+border-radius:11px;
+padding:10px 16px;
+font-weight:800;
+box-shadow:0 6px 18px rgba(183,101,72,.22);
+transition:.2s;
+white-space:nowrap;
+}
+
+@media(max-width:700px){
+}
+.top-reset:active{
+transform:translateY(0);
+}
+@media(max-width:700px){
+}
+.hero{min-height:680px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(16,30,21,.35),rgba(8,15,11,.75)),url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=85") center/cover}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,16,11,.88),rgba(7,16,11,.42) 55%,rgba(7,16,11,.18))}.hero-content{position:relative;z-index:2;min-height:680px;display:flex;flex-direction:column;justify-content:center}.hero h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(3.4rem,8vw,7.2rem);line-height:.88;max-width:800px;margin:0;color:#fff7e8}.hero h1 span{color:#d5a968}.hero p{max-width:690px;color:#d5d7c9;font-size:1.08rem;line-height:1.8;margin:28px 0}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:13px 19px;font-weight:800}.primary{background:var(--gold);color:#17241a}.primary:hover{background:#efd28e;transform:translateY(-1px)}.secondary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff}.secondary:hover{background:rgba(255,255,255,.15)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}.card{background:linear-gradient(145deg,#1c2c21,#142118);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}.feature{min-height:340px;display:flex;flex-direction:column}.feature-num{color:var(--rust);font-weight:800;letter-spacing:2px;font-size:.75rem}.feature h3{font-family:"Playfair Display",serif;font-size:2rem;margin:24px 0 12px}.feature p{color:var(--muted);line-height:1.75}.feature button{margin-top:auto;width:max-content;border:0;background:none;color:var(--gold);font-weight:800;padding:0}
+.dark-band{background:#0d1711;border-top:1px solid #26372b;border-bottom:1px solid #26372b}.steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:42px}.step{padding:20px 24px;border-left:1px solid var(--line)}.step:first-child{border-left:0}.step b{color:var(--gold);font-size:.8rem}.step h4{font-family:"Playfair Display",serif;font-size:1.35rem;margin:10px 0}.step p{color:var(--muted);margin:0}
+.landscape{height:380px;margin-top:38px;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(180deg,rgba(10,20,14,.1),rgba(9,16,11,.7)),url("https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1600&q=85") center/cover;box-shadow:var(--shadow);border:1px solid #3a4a3b}.landscape-label{position:absolute;top:20px;left:20px;background:rgba(13,23,17,.85);border:1px solid #59664f;border-radius:12px;padding:10px 14px;font-weight:700}.stat-row{display:flex;gap:10px;position:absolute;right:20px;top:20px}.stat{background:rgba(13,23,17,.85);border:1px solid #59664f;border-radius:12px;padding:9px 12px;text-align:center}.stat small{display:block;color:#9fa999;font-size:.68rem}.stat strong{color:#f1d08b}
+.game{display:grid;grid-template-columns:280px 1fr;gap:22px;margin-top:42px}.levels{height:max-content;position:sticky;top:92px}.levels h3{font-family:"Playfair Display",serif;margin-top:0}.level-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.level-grid button{border:1px solid var(--line);background:#17251c;color:#9ea89d;border-radius:8px;padding:8px 2px;font-weight:700}.level-grid button.current{border-color:var(--gold);color:var(--gold)}.level-grid button.done{background:#486a49;color:#fff}.game-card{overflow:hidden;padding:0}.game-head{padding:32px;background:linear-gradient(135deg,#223b29,#4c6544);background-image:linear-gradient(135deg,rgba(20,39,25,.75),rgba(65,82,52,.55)),url("https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1400&q=85");background-size:cover;background-position:center}.game-head h2{font-family:"Playfair Display",serif;font-size:2.5rem;margin:6px 0}.game-body{padding:30px;background:#17251c}.story{color:#c2c7bb;line-height:1.8}.question{margin:22px 0;padding:18px;background:#222f25;border:1px solid #3c4a3e;border-left:4px solid var(--rust);border-radius:14px;font-weight:700}.choices{display:grid;gap:10px}.choice{width:100%;text-align:left;padding:16px;border:1px solid #3a493d;background:#1c2c21;color:#e9e6d9;border-radius:13px}.choice:hover{border-color:#78945e;background:#24382a;transform:translateX(3px)}.choice strong{display:block;color:#fff;margin-bottom:4px}.choice span{color:#aeb7a9;font-size:.9rem}.result{margin-top:20px;padding:20px;border-radius:15px;background:#243729;border:1px solid #51654e}.result h4{margin:0 0 7px;color:#e7c77e}.game-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.bot-layout{display:grid;grid-template-columns:1fr 300px;gap:22px;margin-top:42px}.chat{min-height:650px;display:flex;flex-direction:column;overflow:hidden}.chat-head{padding:25px;background:linear-gradient(135deg,#253d2b,#50674a)}.chat-head h2{font-family:"Playfair Display",serif;font-size:2rem;margin:0}.chat-head p{margin:5px 0 0;color:#d5dacd}.messages{flex:1;min-height:430px;max-height:520px;overflow:auto;padding:24px;background:#142118}.msg{max-width:84%;padding:13px 16px;border-radius:15px;margin-bottom:12px;line-height:1.65}.msg.bot{background:#27372b;color:#d8dfd2;border-bottom-left-radius:4px}.msg.user{margin-left:auto;background:#506c4e;color:#fff;border-bottom-right-radius:4px}.chat-input{display:flex;gap:8px;padding:13px;background:#111b15;border-top:1px solid var(--line)}.chat-input input{min-width:0;flex:1;background:#1b2a20;border:1px solid #3c4a3d;color:#fff;padding:13px;border-radius:11px;outline:0}.chat-input input:focus{border-color:#78945e}.send{border:0;background:var(--rust);color:#fff;border-radius:11px;padding:0 18px;font-weight:800}.topic button{width:100%;text-align:left;border:1px solid var(--line);background:#19271e;color:#cbd1c5;padding:12px;border-radius:10px;margin-bottom:8px;font-weight:700}.topic button:hover{background:#293a2d;border-color:#708c5d}.bot-note{margin-top:16px;background:#2b2721;border:1px solid #4b4033;padding:15px;border-radius:12px;color:#c5b7a1;font-size:.84rem}
+.check{max-width:900px;margin:42px auto 0}.check-card{padding:30px}.q{padding:25px 0;border-bottom:1px solid var(--line)}.q:first-child{padding-top:0}.q h3{font-family:"Playfair Display",serif;font-size:1.4rem;margin:0 0 6px}.q p{color:var(--muted);margin:0 0 15px}.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.opt{border:1px solid var(--line);background:#19271e;color:#c8d0c3;padding:13px;border-radius:11px;text-align:left}.opt.selected,.opt:hover{border-color:#78945e;background:#27382b;color:#fff}.check-result{margin-top:24px;padding:24px;background:linear-gradient(145deg,#263b2a,#3b3428);border:1px solid #56624d;border-radius:18px}.result-title{font-family:"Playfair Display",serif;font-size:2rem;color:#f0cf8b}.result-list{display:grid;gap:8px;margin-top:15px}.result-item{padding:11px 13px;background:rgba(255,255,255,.06);border-radius:9px;color:#c9cec4}
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:35px}.info-card{padding:25px;background:#18271e;border:1px solid var(--line);border-radius:20px}.info-card h3{font-family:"Playfair Display",serif;margin-top:0}.info-card p{color:var(--muted)}footer{text-align:center;background:#09100c;padding:35px;color:#8f998d;border-top:1px solid #26372b}footer strong{color:var(--gold)}
+@media(max-width:900px){.cards,.steps{grid-template-columns:1fr 1fr}.game,.bot-layout{grid-template-columns:1fr}.levels{position:static}.nav{flex-wrap:wrap}.navlinks{order:3;width:100%}}
+@media(max-width:620px){.cards,.steps,.opts,.info-grid{grid-template-columns:1fr}.hero,.hero-content{min-height:610px}.hero h1{font-size:3.4rem}.section{padding:55px 0}.stat-row{top:75px;left:20px;right:auto}.game-body,.game-head,.check-card{padding:22px}.landscape{height:320px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="brand" onclick="showPage('home')"><div class="brand-mark"></div>AquaSphere</div>
+  <div class="navlinks">
+    <button class="active" data-page="home" onclick="showPage('home')">Home</button>
+    <button data-page="quest" onclick="showPage('quest')">AquaQuest</button>
+    <button data-page="bot" onclick="showPage('bot')">AquaBot</button>
+    <button data-page="check" onclick="showPage('check')">AquaCheck</button>
+  </div>
+</nav>
+
+<main id="home" class="page active">
+<section class="hero"><div class="container hero-content">
+  <div class="eyebrow">Water · Soil · Plants · Life</div>
+  <h1>Discover the <span>Hidden Water.</span></h1>
+  <p>AquaSphere turns groundwater awareness into a visual, story-driven experience. Explore decisions, ask questions and learn to notice water in the world around you.</p>
+  <div class="actions"><button class="btn primary" onclick="showPage('quest')">Begin the journey</button><button class="btn secondary" onclick="showPage('bot')">Talk to AquaBot</button></div>
+</div></section>
+<section class="section"><div class="container">
+  <div class="eyebrow">The experience</div><h2 class="section-title">Understand water without needing to be an expert.</h2><p class="section-subtitle">AquaSphere connects everyday observations with the hidden journey of water through homes, soil, plants, farms and communities.</p>
+  <div class="cards">
+    <article class="card feature"><div class="feature-num">01 / EXPLORE</div><h3>AquaQuest</h3><p>Follow a 30-level environmental story. Investigate clues, make decisions and watch your living landscape respond.</p><button onclick="showPage('quest')">Enter the hidden water →</button></article>
+    <article class="card feature"><div class="feature-num">02 / ASK</div><h3>AquaBot</h3><p>Ask about groundwater, rainfall, soil, roots, trees, wetlands and plant stress through a conversational knowledge guide.</p><button onclick="showPage('bot')">Ask AquaBot →</button></article>
+    <article class="card feature"><div class="feature-num">03 / OBSERVE</div><h3>AquaCheck</h3><p>No rainfall measurements required. Describe what you see around you and receive an awareness-focused interpretation.</p><button onclick="showPage('check')">Start AquaCheck →</button></article>
+  </div>
+</div></section>
+<section class="section dark-band"><div class="container"><div class="eyebrow">One connected journey</div><h2 class="section-title">Explore. Understand. Observe. Act.</h2><div class="steps"><div class="step"><b>01</b><h4>Explore</h4><p>Experience realistic water situations through stories.</p></div><div class="step"><b>02</b><h4>Understand</h4><p>Ask why the situation happens and learn the science.</p></div><div class="step"><b>03</b><h4>Observe</h4><p>Look for similar signs in your own surroundings.</p></div><div class="step"><b>04</b><h4>Act</h4><p>Turn awareness into practical everyday choices.</p></div></div></div></section>
+<section class="section"><div class="container"><div class="eyebrow">Living landscape</div><h2 class="section-title">Your choices leave a mark.</h2><p class="section-subtitle">AquaQuest changes the landscape status as you progress. The purpose is to show that water, soil, plants and people are connected.</p><div class="landscape"><div class="landscape-label" id="landLabel">Seedling valley</div><div class="stat-row"><div class="stat"><small>Levels</small><strong id="homeLevels">0 / 30</strong></div><div class="stat"><small>Water saved</small><strong id="homeWater">0 L</strong></div></div></div></div></section>
+</main>
+
+<main id="quest" class="page"><section class="section"><div class="container"><div class="section-head-row"><div><div class="eyebrow">AquaQuest</div><h1 class="section-title">The Hidden Water</h1></div></div><p class="section-subtitle">A 30-level story about the water beneath everyday life. Some levels are choices, some are investigations, and every level explains the science behind the decision.</p><div class="game"><aside class="levels card"><h3>Your journey</h3><div class="level-grid" id="levelGrid"></div><p style="color:var(--muted)"><strong id="progress">0 / 30</strong> explored</p></aside><section class="card game-card"><div class="game-head"><div class="eyebrow" id="levelNo">LEVEL 01</div><h2 id="levelTitle">The Silent Tap</h2></div><div class="game-body"><p class="story" id="levelStory"></p><div class="question" id="levelQuestion"></div><div class="choices" id="choices"></div><div id="questResult"></div><div class="game-actions"><button class="btn primary hidden" id="nextBtn" onclick="nextLevel()">Continue the journey →</button><button class="btn secondary" onclick="showPage('bot')">Ask AquaBot about this</button></div></div></section></div></div></section></main>
+
+<main id="bot" class="page"><section class="section"><div class="container"><div class="section-head-row"><div><div class="eyebrow">AquaBot</div><h1 class="section-title">Ask the water world.</h1></div></div><p class="section-subtitle">Ask naturally. AquaBot covers groundwater, recharge, soil, roots, plants, trees, wetlands, rain, drought and everyday conservation.</p><div class="bot-layout"><section class="card chat"><div class="chat-head"><h2>AquaBot</h2><p>Water knowledge + plant knowledge + everyday explanations.</p></div><div class="messages" id="messages"><div class="msg bot">Hello. Ask me anything about groundwater, rain, soil, plants or water conservation. Try: <strong>Why are my plants wilting?</strong></div></div><div class="chat-input"><input id="chatInput" placeholder="Ask about water, soil or plants..." onkeydown="if(event.key==='Enter')sendQuestion()"><button class="send" onclick="sendQuestion()">Ask</button></div></section><aside class="card topic"><h3 style="font-family:'Playfair Display',serif">Explore a topic</h3><button onclick="askSuggested('What is groundwater?')">Groundwater</button><button onclick="askSuggested('How does groundwater recharge?')">Recharge</button><button onclick="askSuggested('Why are my plants wilting?')">Plant stress</button><button onclick="askSuggested('Why are native plants useful?')">Native plants</button><button onclick="askSuggested('How do roots help the soil?')">Roots and soil</button><button onclick="askSuggested('Why are ponds important?')">Ponds</button><button onclick="askSuggested('What happens during drought?')">Drought</button><button onclick="askSuggested('How can I save water at home?')">Home conservation</button><div class="bot-note">AquaBot is an educational guide. Plant symptoms can have many causes, so it explains possible environmental causes rather than claiming a diagnosis.</div></aside></div></div></section></main>
+
+<main id="check" class="page"><section class="section"><div class="container"><div class="section-head-row"><div><div class="eyebrow">AquaCheck</div><h1 class="section-title">What can you observe?</h1></div></div><p class="section-subtitle">No rainfall measurements. No technical formulas. Answer simple questions about soil, rain, plants, water sources and water use.</p><div class="check"><section class="card check-card">
+<div class="q"><h3>01. What have you noticed about the soil?</h3><p>Think about soil around your home, garden or neighborhood.</p><div class="opts"><button class="opt" onclick="pick(this,1,0)">It usually stays moist</button><button class="opt" onclick="pick(this,1,1)">It dries fairly quickly</button><button class="opt" onclick="pick(this,1,2)">It becomes very dry or cracked</button><button class="opt" onclick="pick(this,1,0)">I'm not sure</button></div></div>
+<div class="q"><h3>02. What happens when it rains heavily?</h3><p>Think about what you see after strong rainfall.</p><div class="opts"><button class="opt" onclick="pick(this,2,0)">Water seems to soak in</button><button class="opt" onclick="pick(this,2,1)">Some water stays on top</button><button class="opt" onclick="pick(this,2,2)">Water quickly runs away</button><button class="opt" onclick="pick(this,2,0)">I'm not sure</button></div></div>
+<div class="q"><h3>03. What are nearby plants doing?</h3><p>Look at trees, grass, gardens or other vegetation.</p><div class="opts"><button class="opt" onclick="pick(this,3,0)">Growing normally</button><button class="opt" onclick="pick(this,3,1)">Some look stressed</button><button class="opt" onclick="pick(this,3,2)">Many are wilting or drying</button><button class="opt" onclick="pick(this,3,0)">I'm not sure</button></div></div>
+<div class="q"><h3>04. What is happening to a local water source?</h3><p>This could be a well, pond, tank or familiar source.</p><div class="opts"><button class="opt" onclick="pick(this,4,0)">No noticeable change</button><button class="opt" onclick="pick(this,4,1)">It recovers more slowly</button><button class="opt" onclick="pick(this,4,2)">The level seems lower</button><button class="opt" onclick="pick(this,4,0)">I don't know</button></div></div>
+<div class="q"><h3>05. Has water use around you changed?</h3><p>Think about your home, neighborhood or farm.</p><div class="opts"><button class="opt" onclick="pick(this,5,0)">Not really</button><button class="opt" onclick="pick(this,5,1)">It increased a little</button><button class="opt" onclick="pick(this,5,2)">It increased a lot</button><button class="opt" onclick="pick(this,5,0)">I'm not sure</button></div></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><button class="btn primary" onclick="calculateCheck()">Understand my observations</button><button class="btn secondary" onclick="resetAquaCheck()">Reset AquaCheck</button></div><div id="checkResult" class="check-result hidden"></div>
+</section></div></div></section></main>
+
+<footer><strong>AquaSphere</strong><div>Understand water. Protect what lies beneath.</div></footer>
+
+<script>
+const levels=[
+['The Silent Tap','You hear a public tap dripping constantly. It has been leaking for days.','What would you do?',['Walk past it','Tell someone responsible','Wait for it to stop'],['It is not your responsibility.','The leak can be checked and repaired.','The leak may continue for days.'],'A leaking tap is a simple example of avoidable water loss.'],
+['The Long Shower','A family member takes very long showers every morning because water is always available.','Which response creates the most useful change?',['Do nothing','Reduce unnecessary shower time','Keep the tap running while preparing'],['The supply seems fine.','Reducing demand avoids avoidable use.','This increases unnecessary use.'],'Water conservation often begins with reducing unnecessary demand.'],
+['The Overflowing Tank','Water is flowing from an overhead tank because the pump was left running.','What should happen next?',['Ignore it','Switch it off and check the system','Open another tap'],['The water will eventually stop.','Stop the loss and investigate the cause.','This does not solve the problem.'],'Overflow can waste stored water. Simple attention to household systems prevents repeated loss.'],
+['The Kitchen Sink','Vegetables are being washed while the tap runs continuously.','What could be changed?',['Keep the tap running','Use a bowl or controlled flow','Wash them with a hose'],['It is convenient.','Controlled flow can reduce unnecessary use.','This may increase water use.'],'Changing how water is used can reduce waste without stopping the activity.'],
+['The Second Life of Water','Some relatively clean household water is sent straight down the drain.','What is one possible responsible use?',['Use suitable water for plants','Pour it into a storm drain','Reuse every type of wastewater'],['Some water can be reused where appropriate.','This does not create useful reuse.','Some wastewater should not be reused directly.'],'Water reuse depends on what the water contains.'],
+['The Broken Pipeline','A roadside pipeline has been leaking into the street for several days.','What is the most useful community response?',['Report the leak','Walk around it','Block the road yourself'],['Repairing infrastructure prevents continuous loss.','The problem remains.','This does not repair the leak.'],'Infrastructure losses can continue day and night.'],
+['The Empty Park','A neighborhood park has bare soil. During rain, water quickly moves toward the road.','What could help?',['Cover everything with concrete','Protect open soil and vegetation','Remove the remaining plants'],['This can reduce infiltration.','Vegetated areas can help water interact with soil.','This can worsen soil exposure.'],'Healthy soil and vegetation can influence how water moves across a landscape.'],
+['The Paved Ground','A new paved area is planned next to a garden. The ground currently absorbs rain.','What should planners consider?',['Only the parking space','How rainwater will move and drain','Cover the entire area immediately'],['Water movement also matters.','Planning can reduce unnecessary runoff.','More hard surface can change infiltration.'],'Hard surfaces can change how rainfall moves.'],
+['The Missing Pond','An old community pond has become smaller and is now used for dumping waste.','What should the community explore?',['Fill it completely','Restore and protect it','Ignore it'],['This removes a local water feature.','Ponds can support storage and ecosystems.','The decline may continue.'],'Ponds can provide surface storage, habitat and community value.'],
+['The Rain That Disappeared','After heavy rain, water flows rapidly along the street and disappears into a drain.','What question should you ask?',['Where does the water go?','How can we make it disappear faster?','Why should we care?'],['Understanding the path is the first step.','That does not necessarily improve water availability.','Rainfall movement affects the local water cycle.'],'Rain does not automatically become groundwater.'],
+['The Thirsty Field','A farm field is watered heavily even though parts of the soil are still wet.','What could the farmer consider?',['Add more water','Check soil moisture before watering','Water the road too'],['More water is not always better.','Observation can reduce unnecessary irrigation.','This creates unnecessary loss.'],'Irrigation efficiency depends on crop needs, soil, weather and timing.'],
+['The Farmer’s Choice','A farmer is choosing between flood irrigation and a more controlled irrigation system.','What should be considered?',['Only appearance','Crop needs and water efficiency','Always choose the most expensive system'],['Appearance is not enough.','Crop, soil, climate and water availability matter.','Cost alone does not determine suitability.'],'Irrigation decisions should consider local conditions and practical constraints.'],
+['The Dry Canal','A canal is dry and plants beside it are struggling.','What should be investigated first?',['Assume plants are the problem','Look upstream and downstream','Remove the plants'],['There may be a wider water issue.','Water movement can reveal where a problem begins.','That does not restore water.'],'Following water movement can reveal useful clues.'],
+['The Crop That Needs Less','A farmer wants to reduce pressure on available water next season.','What could be explored?',['Crops suited to local conditions','Choose the thirstiest crop','Ignore water availability'],['Crop-water requirements matter.','This may increase demand.','Water supply should be considered.'],'Agricultural planning can consider crops, seasons, soil and water availability.'],
+['The Hidden Cost of Overwatering','A garden is watered every morning even after rainfall. Some soil stays wet.','What would be a better habit?',['Water automatically every day','Observe soil and plant needs','Add more water during rain'],['This ignores actual conditions.','Watering can respond to conditions.','This increases unnecessary use.'],'Plants need water, but more water is not always better.'],
+['The Wilting Tree','A young tree has drooping leaves during a hot afternoon.','What should you investigate?',['Only the leaves','Soil moisture, weather and plant condition','Immediately remove the tree'],['Leaves are one clue.','Multiple observations give better context.','Wilting does not automatically mean the tree is dead.'],'Plant stress can have several causes.'],
+['The Forest Floor','A forest floor is covered with leaves and organic material.','Why might this matter?',['It is only decoration','It influences soil moisture and habitat','Remove everything'],['The forest floor has ecological functions.','Organic material can influence soil conditions.','This can disturb the soil system.'],'Leaf litter and organic matter can influence soil structure and moisture.'],
+['The Roots Beneath Us','A large tree survives a dry period better than a shallow-rooted plant nearby.','What could help explain the difference?',['Trees never need water','Different root systems and adaptations','The tree does not interact with soil'],['Trees still require water.','Plants have different ways of accessing water.','Roots are closely connected to soil.'],'Root depth and architecture differ between species.'],
+['The Vanishing Wetland','A small wetland is being drained because it looks like unused land.','What should the community ask first?',['How much land can we gain?','What role does the wetland play?','Remove all vegetation'],['There may be ecological functions being lost.','Understanding its function should come first.','This can damage habitat.'],'Wetlands can support habitat, water storage and other ecosystem functions.'],
+['The Native Garden','A school wants a garden suited to local conditions.','What could be part of the planning?',['Choose plants only for appearance','Consider locally suitable native species','Give every plant the same watering'],['Appearance is only one consideration.','Plant selection should fit the environment.','Different plants have different needs.'],'Native and locally adapted plants can fit local climate and ecological relationships.'],
+['The Well That Takes Longer','A household notices that its well seems to recover more slowly after heavy use.','What should they do?',['Pump even more','Observe usage and seek local information','Assume it is permanently empty'],['This may increase pressure.','Understanding the situation is important.','One observation is not enough to establish that.'],'Well behavior depends on geology, recharge, pumping and water use.'],
+['The Invisible Reservoir','You cannot see groundwater beneath your feet, yet wells and ecosystems can depend on it.','What is the key idea?',['If we cannot see it, it does not matter','Water can be stored and move underground','All underground water is immediately available'],['Groundwater can be extremely important.','Groundwater exists within geological formations.','Availability varies greatly.'],'Groundwater occupies pores, cracks or spaces in soil and rock.'],
+['Where Does Rain Go?','Rain lands on a garden. Some disappears, some remains, and some is taken up by plants.','Which explanation is closest?',['All rain becomes groundwater','Rain can run off, evaporate, be used by plants or infiltrate','Rain always stays where it lands'],['Rain follows several pathways.','Multiple pathways exist.','Water moves through the environment.'],'The water cycle contains many pathways.'],
+['The Recharge Zone','Open ground allows rain to enter soil. A construction plan would cover it with a hard surface.','What should be considered?',['Only the building footprint','Whether the area contributes to infiltration','Cover it without checking'],['Water movement matters too.','Recharge depends on local conditions.','The surface change could alter water movement.'],'Some areas may contribute to groundwater recharge depending on local geology and soil.'],
+['The Concrete Problem','A neighborhood replaces gardens and open soil with concrete. More water now flows rapidly toward drains.','What changed?',['Nothing','The way water interacts with the ground','Rain stopped being water'],['The surface changed significantly.','Hard surfaces can alter runoff and infiltration.','The pathway changed, not the rain.'],'Impervious surfaces can increase runoff and reduce direct infiltration.'],
+['A Year Without Enough Rain','A dry period continues longer than expected. Gardens, farms and water sources are under pressure.','What should a community prioritize?',['Use water exactly as before','Reduce unnecessary demand and protect water sources','Wait until everything becomes critical'],['Demand may need to change.','Supply and demand both matter.','Early action can reduce pressure.'],'During prolonged dry conditions, conservation and protection of water sources matter.'],
+['The Water Emergency','A neighborhood has limited water for the week. People disagree about what should happen.','Which principle could guide the discussion?',['Everyone uses as much as possible','Prioritize essential needs and reduce avoidable use','Only gardens receive water'],['This increases competition.','It focuses limited water on important needs.','Needs differ.'],'Water planning involves priorities and consideration of essential needs.'],
+['The Community Decision','A community can spend its limited environmental budget on decoration or repairing a leaking public system.','What question should guide the decision?',['Which looks more impressive?','Which action addresses an actual water problem?','Spend everything immediately'],['Appearance is not the only consideration.','Impact and need should guide planning.','Planning matters.'],'Good community decisions begin by identifying the actual problem.'],
+['Restore the Landscape','The landscape is beginning to recover. The community can restore a pond, protect vegetation and improve water use.','What should happen?',['Only one action matters','Combine several practical actions','Stop because it looks better'],['Water systems are interconnected.','Multiple improvements can reinforce each other.','Long-term stewardship matters.'],'Water security is rarely solved by one action.'],
+['The Final Choice','You return to where the journey began. The final question is not about one tap, pond or tree.','What have you learned?',['Water is only a household issue','Water connects people, soil, plants and ecosystems','Only experts can protect water'],['Water connects many systems.','This is the central idea of AquaSphere.','Everyone can contribute through informed choices.'],'Water moves through connected systems, so awareness can guide everyday choices.']
+];
+
+let state=JSON.parse(localStorage.getItem('aquasphere_fixed'))||{current:0,done:[],ecosystem:50,water:0};
+let check={1:null,2:null,3:null,4:null,5:null};
+
+
+function pick(button, questionNumber, value){
+    const question = button.closest('.q');
+    if(!question) return;
+
+    question.querySelectorAll('.opt').forEach(function(option){
+        option.classList.remove('selected');
+    });
+
+    button.classList.add('selected');
+    check[questionNumber] = value;
+
+    const result = document.getElementById('checkResult');
+    if(result) result.classList.add('hidden');
+}
+
+function calculateCheck(){
+    const result = document.getElementById('checkResult');
+    if(!result) return;
+
+    const answers = Object.values(check);
+    const answered = answers.filter(function(value){ return value !== null; }).length;
+
+    if(answered < 5){
+        result.classList.remove('hidden');
+        result.innerHTML = '<strong>Please answer all five observations first.</strong><br><span style="color:var(--muted)">AquaCheck uses all five observations to give the most useful awareness summary.</span>';
+        return;
+    }
+
+    const score = answers.reduce(function(total, value){ return total + Number(value); }, 0);
+
+    let title;
+    let body;
+
+    if(score <= 2){
+        title = 'Mostly healthy observations';
+        body = 'Your observations do not show many obvious signs of water stress. Continue noticing how soil, rainfall, plants and local water sources change over time.';
+    }else if(score <= 6){
+        title = 'Some signs worth noticing';
+        body = 'Some of your observations suggest that water movement or water availability may deserve attention. Watch changes in soil moisture, runoff, plant condition and nearby water sources.';
+    }else{
+        title = 'Several signs of water stress';
+        body = 'Several observations point toward possible water stress or changes in how water moves through the area. Look for repeated patterns over time rather than relying on one observation.';
+    }
+
+    result.classList.remove('hidden');
+    result.innerHTML = '<div class="result-title">'+title+'</div><div style="margin-top:10px;color:var(--muted)">'+body+'</div><div style="margin-top:14px;font-size:.9rem;color:var(--muted)">AquaCheck is an awareness tool, not a scientific groundwater diagnosis.</div>';
+}
+
+function resetAquaCheck(){
+    check = {1:null,2:null,3:null,4:null,5:null};
+
+    document.querySelectorAll('#check .opt').forEach(function(button){
+        button.classList.remove('selected');
+    });
+
+    const result = document.getElementById('checkResult');
+    if(result){
+        result.classList.add('hidden');
+        result.innerHTML = '';
+    }
+}
+
+function save(){localStorage.setItem('aquasphere_fixed',JSON.stringify(state));}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.navlinks button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'});if(id==='quest'){renderLevels();loadLevel(state.current)}updateHome();}
+function label(){return state.ecosystem>=80?'Thriving watershed':state.ecosystem>=65?'Recovering landscape':state.ecosystem>=45?'Seedling valley':'Water-stressed valley';}
+function updateHome(){document.getElementById('landLabel').textContent=label();document.getElementById('homeLevels').textContent=state.done.length+' / 30';document.getElementById('homeWater').textContent=state.water+' L';}
+function renderLevels(){const box=document.getElementById('levelGrid');box.innerHTML='';levels.forEach((l,i)=>{const b=document.createElement('button');b.textContent=i+1;b.className=(i===state.current?'current ':'')+(state.done.includes(i)?'done':'');b.onclick=()=>{if(i===0||state.done.includes(i)||state.done.includes(i-1)){state.current=i;save();loadLevel(i);renderLevels();}};box.appendChild(b)});document.getElementById('progress').textContent=state.done.length+' / 30';}
+function loadLevel(i){const l=levels[i];document.getElementById('levelNo').textContent='LEVEL '+String(i+1).padStart(2,'0');document.getElementById('levelTitle').textContent=l[0];document.getElementById('levelStory').textContent=l[1];document.getElementById('levelQuestion').textContent=l[2];const box=document.getElementById('choices');box.innerHTML='';document.getElementById('questResult').innerHTML='';document.getElementById('nextBtn').classList.add('hidden');l[3].forEach((c,j)=>{const b=document.createElement('button');b.className='choice';b.innerHTML='<strong>'+c+'</strong><span>'+l[4][j]+'</span>';b.onclick=()=>choose(j);box.appendChild(b)});}
+function choose(j){const l=levels[state.current];const points=j===1?3:(j===0?0:-1);const saved=j===1?10:0;state.ecosystem=Math.max(0,Math.min(100,state.ecosystem+points));state.water+=saved;if(!state.done.includes(state.current))state.done.push(state.current);save();document.querySelectorAll('.choice').forEach(b=>b.disabled=true);document.getElementById('questResult').innerHTML='<div class="result"><h4>You chose: '+l[3][j]+'</h4><div>'+l[4][j]+'</div><p><strong>Why this matters:</strong> '+l[5]+'</p><p><strong>Landscape:</strong> '+label()+' · <strong>Journey water saved:</strong> '+state.water+' L</p></div>';document.getElementById('nextBtn').classList.remove('hidden');renderLevels();updateHome();}
+function nextLevel(){if(state.current<levels.length-1){state.current++;save();loadLevel(state.current);renderLevels();}else{document.getElementById('questResult').innerHTML='<div class="result"><h4>Journey complete.</h4><p>You explored how homes, farms, soil, plants, water sources and communities connect.</p></div>';document.getElementById('nextBtn').classList.add('hidden');}}
+
+const knowledge=[
+[/groundwater|underground water/i,`<strong>Groundwater</strong><br><br>Groundwater is water stored below the ground in spaces and fractures within soil and geological formations. It can supply wells, springs, streams and ecosystems.<br><br>You cannot normally see it directly, but surface conditions can influence how water enters and moves through the ground.`],
+[/recharge|replenish|refill/i,`<strong>Groundwater recharge</strong><br><br>Recharge happens when water infiltrates deeply enough to add to underground water stores. Not every drop of rain becomes groundwater: some runs off, evaporates or is used by plants.`],
+[/aquifer/i,`<strong>Aquifer</strong><br><br>An aquifer is a geological formation that can contain and transmit groundwater in usable quantities. It is not necessarily a giant underground lake; water may occupy pores, cracks or spaces in rock and sediment.`],
+[/wilt|wilting|droop|drooping/i,`<strong>Why plants wilt</strong><br><br>Wilting can happen when a plant loses water faster than it can replace it. Heat, root damage, disease, poor soil conditions, transplant stress and excessive watering can also cause problems.<br><br>A good observer checks the soil, leaves, roots, recent weather and overall plant condition.`],
+[/yellow leaf|yellow leaves|yellowing/i,`<strong>Yellow leaves</strong><br><br>Yellowing can have several causes. Depending on the plant, possibilities include overwatering, poor drainage, nutrient problems, aging leaves, root stress or insufficient light.<br><br>Check whether the soil stays wet for a long time, whether the yellowing is on old or new leaves, and whether the plant receives suitable light.`],
+[/overwater|over water|water every day|too much water|watered too much/i,`<strong>Possible overwatering</strong><br><br>If a plant is watered frequently while the soil remains wet, roots may experience poor aeration. This can contribute to yellowing, wilting or slow growth.<br><br>Before watering again, check the soil and the plant's actual needs. Different species and potting conditions require different watering schedules.`],
+[/brown leaf|brown leaves|brown edges|crispy leaves/i,`<strong>Brown or crispy leaves</strong><br><br>Brown edges can be associated with drought stress, low humidity, salt buildup, root problems, heat or other environmental stresses.<br><br>Look at the whole plant and its growing conditions rather than assuming that more water is always the answer.`],
+[/native plant|native species/i,`<strong>Native plants</strong><br><br>Native plants occur naturally in a region and are part of local ecological relationships. They may be adapted to local climate and soils. Plant selection should still consider the exact site, sunlight, soil and water requirements.`],
+[/root|roots/i,`<strong>Roots and soil</strong><br><br>Roots anchor plants, absorb water and nutrients, and interact with the soil ecosystem. Root systems differ greatly between species and can influence how plants access water.`],
+[/soil|earth|mud|dry soil|cracked soil/i,`<strong>Soil and water</strong><br><br>Soil contains minerals, organic matter, air, water and living organisms. Its structure influences how quickly water enters, moves through and remains available to plants.<br><br>Very dry or cracked soil can indicate low moisture, but the meaning depends on soil type, weather and the plant growing there.`],
+[/pond/i,`<strong>Ponds</strong><br><br>Ponds can provide surface water storage, habitat and ecological value. Depending on local conditions, they can also interact with surrounding soil and groundwater.`],
+[/wetland/i,`<strong>Wetlands</strong><br><br>Wetlands are environments where water strongly influences soil and biological communities. They can support biodiversity, store water and provide other ecosystem functions.`],
+[/drought|dry period|no rain/i,`<strong>Drought</strong><br><br>Drought involves an extended period of unusually low water availability relative to normal conditions. Plants, farms, rivers, reservoirs and groundwater can respond differently.`],
+[/rain|rainwater|heavy rain|rainfall/i,`<strong>Rainwater</strong><br><br>When rain reaches land, some becomes runoff, some infiltrates, some is used by plants and some returns to the atmosphere through evaporation and transpiration.`],
+[/flood|flooding|waterlogging|water logged/i,`<strong>When rain causes flooding</strong><br><br>Heavy rain does not automatically become groundwater. If rainfall arrives faster than soil can absorb it, or if surfaces are impervious, more water may become runoff and collect in low areas.<br><br>Drainage, soil type, land cover and local topography all matter.`],
+[/concrete|pavement|paved/i,`<strong>Hard surfaces</strong><br><br>Concrete and other impervious surfaces can prevent rainfall from directly entering soil where they cover it. They can increase runoff and change drainage patterns.`],
+[/save water|conservation|waste water|water waste|water wastage|leak/i,`<strong>Saving water</strong><br><br>Start with simple actions: repair leaks, avoid unnecessary running water, use water thoughtfully during cleaning and reuse suitable water where safe and practical. Small actions matter when repeated widely.`],
+[/tree|trees/i,`<strong>Trees and water</strong><br><br>Trees need water to maintain tissues, transport nutrients and carry out photosynthesis. Their roots interact with soil and microorganisms. Different tree species have different water needs and drought adaptations.`],
+[/transpiration/i,`<strong>Transpiration</strong><br><br>Plants release water vapor through tiny openings in leaves. This is called transpiration. Together with evaporation, it contributes to evapotranspiration, an important pathway in the water cycle.`],
+[/farm|farmer|irrigation|crop/i,`<strong>Farming and water</strong><br><br>Crop water needs depend on the crop, growth stage, soil, weather and irrigation method. Useful decisions include checking soil moisture, avoiding unnecessary irrigation and choosing crops suited to local conditions.`],
+[/well|well water|water level|well level/i,`<strong>Wells and changing water levels</strong><br><br>A well's behavior can depend on pumping, rainfall, recharge, geology and nearby water use. If a well appears to recover more slowly, that is worth observing over time, but one observation alone does not prove long-term groundwater decline.`]
+];
+
+const scenarioRules=[
+{
+words:['plant','yellow','water'],
+answer:`<strong>Your scenario: yellow leaves + frequent watering</strong><br><br>If the leaves are yellow and the soil is staying wet because the plant is watered very often, <strong>overwatering or poor drainage is one possibility</strong>.<br><br>Before adding more water, check the soil several centimetres below the surface. Also look for a blocked drainage hole, a pot that holds water, or roots that look unhealthy.<br><br><strong>Try this:</strong> pause automatic watering and observe the soil and plant response. The correct watering interval depends on the species and growing conditions.`
+},
+{
+words:['plant','wilt','wet','water'],
+answer:`<strong>Your scenario: a wilting plant with wet soil</strong><br><br>Wilting does not always mean the plant needs more water. If the soil is already wet, root stress or poor drainage could be involved.<br><br>Check drainage, the roots if appropriate, recent heat and whether the plant receives suitable light. Avoid repeatedly adding water just because the leaves are drooping.`
+},
+{
+words:['plant','wilt','dry','soil'],
+answer:`<strong>Your scenario: a wilting plant with dry soil</strong><br><br>Dry soil makes insufficient available water a plausible explanation, especially during hot or windy conditions. But plant species differ greatly in their tolerance of dry conditions.<br><br>Check the soil below the surface and water according to the plant's needs rather than using a fixed schedule.`
+},
+{
+words:['rain','flood'],
+answer:`<strong>Your scenario: heavy rain followed by flooding</strong><br><br>Flooding can happen when rainfall arrives faster than the ground and drainage system can handle it. Hard surfaces, compacted soil, blocked drains and local topography can increase runoff.<br><br>This is why <strong>rainfall does not automatically equal groundwater recharge</strong>. Some water needs to infiltrate the soil before it can contribute to deeper stores.`
+},
+{
+words:['rain','concrete'],
+answer:`<strong>Your scenario: rain falling on a concrete-heavy area</strong><br><br>Concrete and other impervious surfaces can reduce direct infiltration where they cover soil. During rain, more water may travel as surface runoff instead.<br><br>Local drainage design, open soil and appropriately planned green areas can influence how rain moves through the landscape.`
+},
+{
+words:['well','lower'],
+answer:`<strong>Your scenario: a well water level seems lower</strong><br><br>A lower observed water level can have several explanations, including recent pumping, seasonal conditions, rainfall and local groundwater movement.<br><br>Don't conclude that the aquifer is permanently declining from one observation. Record the change over time and, for an important local water decision, use reliable local measurements.`
+},
+{
+words:['tap','leak'],
+answer:`<strong>Your scenario: a leaking tap</strong><br><br>A continuous leak creates avoidable water demand. The useful response is to stop the leak or report it to whoever can repair it.<br><br>One household leak may seem small, but repeated losses across many homes and public systems can add up.`
+},
+{
+words:['farm','dry','crop'],
+answer:`<strong>Your scenario: a dry crop field</strong><br><br>Before simply increasing irrigation, check the crop\'s growth stage, soil moisture, recent weather and irrigation system. Different crops and soils have different water requirements.<br><br>Efficient irrigation means matching water application to actual crop and soil needs as closely as practical.`
+},
+{
+words:['pond','dry'],
+answer:`<strong>Your scenario: a pond is becoming dry</strong><br><br>A shrinking pond can reflect changes in rainfall, evaporation, inflow, groundwater interaction, sedimentation or human water use.<br><br>Look at what changed around the pond rather than assuming one cause. Protecting the pond and understanding its water sources are useful first steps.`
+}
+];
+
+function answer(q){
+    const text=q.toLowerCase().trim();
+    if(/^(hi|hello|hey)\b/.test(text)) return 'Hello. Ask me about <strong>groundwater, rain, soil, plants, roots, ponds, wetlands or conservation.</strong>';
+
+    // AquaBot uses the meaning of the whole scenario. A single keyword should
+    // never decide the answer when the question contains more useful context.
+    const scenarios=[
+      {test:/((plant|plants|leaf|leaves).*(yellow|pale|yellowing)|(yellow|pale|yellowing).*(plant|plants|leaf|leaves)).*(water|watering|wet|moist|daily|every day)/,
+       answer:'<strong>Your scenario: yellow leaves + frequent watering</strong><br><br>Yellow leaves while the plant is being watered frequently can be associated with <strong>overwatering or poor drainage</strong>. If the soil stays wet for a long time, roots may not get enough oxygen.<br><br>Check the soil moisture and drainage before adding more water. Yellow leaves can have other causes too, so this is a possible explanation rather than a diagnosis.'},
+      {test:/(plant|plants|leaf|leaves).*(wilt|wilting|droop|drooping).*(wet|moist|watered|watering|rain)/,
+       answer:'<strong>Your scenario: a wilting plant with wet soil</strong><br><br>Wilting does not always mean the plant needs more water. If the soil is already wet, possible causes include poor drainage, root stress, heat or root damage.<br><br>Check the drainage and recent conditions before adding more water.'},
+      {test:/(plant|plants|leaf|leaves).*(wilt|wilting|droop|drooping).*(dry|drying|thirsty|no water)/,
+       answer:'<strong>Your scenario: a wilting plant with dry soil</strong><br><br>Dry soil makes insufficient available water a plausible cause of wilting. Check moisture below the surface and consider the plant species, recent heat and watering conditions before deciding how much water it needs.'},
+      {test:/(heavy rain|raining heavily|downpour|lot of rain|rainfall).*(flood|flooding|runoff|street|surface)/,
+       answer:'<strong>Your scenario: heavy rain followed by flooding</strong><br><br>Flooding can happen when rainfall arrives faster than soil and drainage systems can handle it. Impervious surfaces, compacted soil, blocked drains and local topography can increase runoff.<br><br>Heavy rain therefore does not automatically mean groundwater recharge.'},
+      {test:/(rain|raining|rainfall).*(concrete|cement|road|pavement|paved)/,
+       answer:'<strong>Your scenario: rain falling on hard surfaces</strong><br><br>Concrete and other impervious surfaces can reduce direct infiltration where they cover soil. More rainfall may move away as surface runoff instead of entering the ground.<br><br>Open, permeable ground can provide more opportunity for infiltration.'},
+      {test:/(well|borewell|bore well|groundwater|water table).*(lower|low|falling|decreasing|declining|less|drop)/,
+       answer:'<strong>Your scenario: a lower well or groundwater level</strong><br><br>A lower observed water level can have several explanations, including pumping, seasonal conditions, rainfall and local groundwater movement.<br><br>One observation does not by itself prove long-term groundwater decline. Tracking the level over time gives better evidence.'},
+      {test:/(tap|faucet|pipe).*(leak|leaking|drip|dripping|waste)/,
+       answer:'<strong>Your scenario: a leaking tap or pipe</strong><br><br>A continuous leak creates avoidable water loss. Repairing the leak or reporting it for repair is a direct way to reduce unnecessary water use.'},
+      {test:/(farm|farmer|crop|field|agriculture).*(dry|drying|thirsty|water|irrigat|wilting)/,
+       answer:'<strong>Your scenario: a dry or water-stressed crop</strong><br><br>Before simply increasing irrigation, check the crop\'s growth stage, soil moisture, recent weather and irrigation method. Different crops and soils have different water requirements.<br><br>Efficient irrigation means matching water application to actual crop and soil needs.'},
+      {test:/(pond|lake|wetland|water body).*(dry|drying|shrinking|empty|disappear|less water)/,
+       answer:'<strong>Your scenario: a drying pond or water body</strong><br><br>A shrinking water body can reflect changes in rainfall, evaporation, inflow, groundwater interaction, sedimentation or human water use.<br><br>Look at what changed around the water body rather than assuming one cause.'},
+      {test:/(soil).*(dry|drying|crack|cracked|moist|wet|water|rain)/,
+       answer:'<strong>Your scenario: observing soil moisture</strong><br><br>Soil structure affects how water enters, moves through and remains available to plants. Compacted or heavily covered ground can increase runoff, while suitable soil structure can support infiltration and water storage.'}
+    ];
+
+    for(const scenario of scenarios){
+        if(scenario.test.test(text)) return scenario.answer;
+    }
+
+    // Topic answers only run when the question does not match a richer scenario.
+    const knowledge=[
+      [/groundwater|underground water/,'<strong>Groundwater</strong><br><br>Groundwater is water stored below the ground in spaces and fractures within soil and geological formations. It can supply wells, springs, streams and ecosystems.'],
+      [/recharge|replenish|refill/,'<strong>Groundwater recharge</strong><br><br>Recharge happens when water infiltrates deeply enough to add to underground water stores. Not every drop of rain becomes groundwater: some runs off, evaporates or is used by plants.'],
+      [/aquifer/,'<strong>Aquifer</strong><br><br>An aquifer is a geological formation that can contain and transmit groundwater. It is not necessarily a giant underground lake; water can occupy pores, cracks or spaces in rock and sediment.'],
+      [/native plant|native species/,'<strong>Native plants</strong><br><br>Native plants occur naturally in a region and may be adapted to local climate and soils. Plant selection should still consider the exact site, sunlight, soil and water requirements.'],
+      [/root|roots/,'<strong>Roots and soil</strong><br><br>Roots anchor plants, absorb water and nutrients, and interact with the soil ecosystem. Root systems differ greatly between species and can influence how plants access water.'],
+      [/pond/,'<strong>Ponds</strong><br><br>Ponds can provide surface water storage, habitat and ecological value. Depending on local conditions, they can also interact with surrounding soil and groundwater.'],
+      [/wetland/,'<strong>Wetlands</strong><br><br>Wetlands are environments where water strongly influences soil and biological communities. They can support biodiversity, store water and provide other ecosystem functions.'],
+      [/drought|dry period|no rain/,'<strong>Drought</strong><br><br>Drought involves an extended period of unusually low water availability relative to normal conditions. Plants, farms, rivers, reservoirs and groundwater can respond differently.'],
+      [/save water|conservation|waste water|water waste|water wastage|leak/,'<strong>Saving water</strong><br><br>Useful actions include repairing leaks, avoiding unnecessary running water, using water thoughtfully during cleaning and reusing suitable water where safe and practical.'],
+      [/transpiration/,'<strong>Transpiration</strong><br><br>Plants release water vapor through tiny openings in leaves. This is called transpiration and is an important part of water movement through plants and the atmosphere.'],
+      [/tree|trees/,'<strong>Trees and water</strong><br><br>Trees need water to maintain tissues, transport nutrients and carry out photosynthesis. Their roots interact with soil and microorganisms, and different species have different water needs.'],
+      [/farm|farmer|irrigation|crop/,'<strong>Farming and water</strong><br><br>Crop water needs depend on the crop, growth stage, soil, weather and irrigation method. Checking soil moisture and avoiding unnecessary irrigation can help use water more efficiently.'],
+      [/rain|rainwater|rainfall/,'<strong>Rainwater</strong><br><br>When rain reaches land, some becomes runoff, some infiltrates, some is used by plants and some returns to the atmosphere through evaporation and transpiration.'],
+      [/soil|earth|mud/,'<strong>Soil and water</strong><br><br>Soil structure influences how quickly water enters, moves through and remains available to plants. Soil type, organic matter and compaction all affect this movement.'],
+      [/wilt|wilting|droop|drooping/,'<strong>Plant stress</strong><br><br>Wilting can have several causes, including water stress, heat, root problems, disease or poor soil conditions. Check the soil, roots, recent weather and overall plant condition rather than assuming the plant simply needs more water.']
+    ];
+
+    for(const [pattern,response] of knowledge){
+        if(pattern.test(text)) return response;
+    }
+
+    return 'I can answer questions about groundwater, rain, soil, plants, ponds, wetlands, water use, and recharge. Please include the main observation in your question so I can give the relevant explanation.';
+}
+
+function answerQuestion(question){ return answer(question); }
+
+function addMsg(text,type){const box=document.getElementById('messages');const d=document.createElement('div');d.className='msg '+type;d.innerHTML=text;box.appendChild(d);box.scrollTop=box.scrollHeight;}
+function answerQuestion(question){
+    return answer(question);
+}
+
+function sendQuestion(){
+    const input = document.getElementById('chatInput');
+    if(!input) return;
+
+    const question = input.value.trim();
+    if(!question) return;
+
+    addMsg(question, 'user');
+    input.value = '';
+
+    const answer = answerQuestion(question);
+
+    setTimeout(function(){
+        addMsg(answer, 'bot');
+    }, 180);
+}
+
+renderLevels();loadLevel(state.current);updateHome();
+function askSuggested(question){
+    const input = document.getElementById('chatInput');
+    if(!input) return;
+
+    input.value = question;
+    sendQuestion();
+}
+</script>
+</body>
+</html>
