@@ -79,6 +79,4 @@ For submission, disclose significant AI assistance and personally test and under
 5. Change rainfall/extraction/temperature in AquaPredict.
 6. Explain the unified loop: **Understand → Predict → Act → Learn**.
 
-## AI disclosure template
 
-> AI tools were used as development and learning aids for brainstorming, code generation, debugging and refinement. The project was reviewed, tested and adapted by the participant, who is responsible for understanding the submitted implementation.
